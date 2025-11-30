@@ -16,7 +16,7 @@ contract KipuBank {
     uint256 immutable i_bankCap;
 
     ///@notice constant variable to limit the withdrawal
-    uint256 constant AMOUNT_PER_WITHDRAW = 1 * 10 ** 16;
+    uint256 public immutable AMOUNT_PER_WITHDRAW;
 
     ///@notice public variable to hold the number of deposits completed
     uint256 public s_depositsCounter;
@@ -48,6 +48,7 @@ contract KipuBank {
            FUNCTIONS
     ///////////////////////*/
     constructor(uint256 _bankCap) {
+        AMOUNT_PER_WITHDRAW = 1 * 10 ** 16;
         i_bankCap = _bankCap;
     }
 
